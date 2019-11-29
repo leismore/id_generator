@@ -1,0 +1,27 @@
+{
+  "name": "@leismore/id_generator",
+  "version": "1.0.0",
+  "description": "A generic ID and token generator for an organization.",
+  "main":  "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leismore/id_generator.git"
+  },
+  "keywords": [
+    "ID",
+    "Token",
+    "Generator",
+    "UUID"
+  ],
+  "author": "Kyle Chine",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/leismore/id_generator/issues"
+  },
+  "homepage": "https://github.com/leismore/id_generator#readme"
+}
