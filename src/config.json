@@ -1,0 +1,41 @@
+{
+  "app":
+  {
+    "projectName":  "id_generator",
+    "host":         "localhost",
+    "port":         "YOUR_HOST_PORT",
+    "backlog":       511,
+    "domain":       "YOUR-DOMAIN.COM"
+  },
+
+  "couchdb":
+  {
+    "designName":   "id_generator",
+    "dbPrefix":     "lmos"
+  },
+
+  "api":
+  {
+    "baseURL": "/api/",
+    "token":  {
+      "url":     "token",
+      "timeout": 10000
+    },
+    "numeric":  {
+      "url":     "numeric-id",
+      "timeout": 10000
+    },
+    "short":  {
+      "url":     "short-id",
+      "timeout": 10000
+    },
+    "uuidRand":  {
+      "url":     "uuid-rand",
+      "timeout": 10000
+    },
+    "uuidNS":  {
+      "url":     "uuid-ns",
+      "timeout": 10000
+    }
+  }
+}
