@@ -8,6 +8,11 @@
     "domain":       "YOUR-DOMAIN.COM"
   },
 
+  "myorg":
+  {
+    "orgID": "UUID_OF_YOUR_ORG"
+  },
+
   "couchdb":
   {
     "designName":   "id_generator",
