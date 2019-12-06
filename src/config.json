@@ -2,10 +2,27 @@
   "app":
   {
     "projectName":  "id_generator",
+    "appID":        "UUID_OF_THIS_APP_ID",
     "host":         "localhost",
     "port":         "YOUR_HOST_PORT",
     "backlog":       511,
     "domain":       "YOUR-DOMAIN.COM"
+  },
+
+  "auth_app_self":
+  {
+    "appID":         "UUID_OF_AUTH_APP_SELF",
+    "api":
+    {
+      "authen": {
+        "url": "HTTPS://AUTHENTICATION_URL",
+        "timeout": 10000
+      },
+      "author": {
+        "url": "HTTPS://AUTHORIZATION_URL",
+        "timeout": 10000
+      }
+    }
   },
 
   "myorg":

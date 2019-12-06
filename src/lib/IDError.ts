@@ -5,6 +5,7 @@
  * Code           Message
  * 1              not application/json
  * 2              CouchDB: connection failure
+ * 3              invalid credential
  */
 
 import { LMError } from '@leismore/lmerror';
