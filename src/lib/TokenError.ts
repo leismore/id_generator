@@ -8,6 +8,7 @@
  * 3              HTTP 405: Method Not Allowed
  * 4              auth_app_self failure
  * 5              authorization failure
+ * 6              token generator failure
  */
 
 import { LMError } from '@leismore/lmerror';

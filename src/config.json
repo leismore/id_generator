@@ -41,7 +41,9 @@
     "baseURL": "/api/",
     "token":  {
       "url":     "token",
-      "timeout": 10000
+      "timeout": 10000,
+      "bitSize": 128,
+      "baseEncoding": "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
     },
     "numeric":  {
       "url":     "numeric-id",
