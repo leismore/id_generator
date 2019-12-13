@@ -51,7 +51,10 @@
     },
     "short":  {
       "url":     "short-id",
-      "timeout": 10000
+      "timeout": 10000,
+      "characters": "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_",
+      "worker":     0,
+      "seed":       1
     },
     "uuidRand":  {
       "url":     "uuid-rand",
