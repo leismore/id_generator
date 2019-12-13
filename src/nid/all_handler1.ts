@@ -2,8 +2,8 @@
  * All Handler 1 - Prevent not-allowed HTTP methods
  */
 
-import * as express    from 'express';
-import { TokenError }  from '../lib/TokenError';
+import * as express  from 'express';
+import { NIDError }  from '../lib/NIDError';
 const ALLOWED        = ['OPTIONS', 'GET'];
 
 function all_handler1(req:express.Request, _res:express.Response, next:express.NextFunction):void
@@ -15,7 +15,7 @@ function all_handler1(req:express.Request, _res:express.Response, next:express.N
       statusCode: '405',
       headers: { 'Allow': ALLOWED.join(', ') }
     };
-    next( new TokenError(error, response) );
+    next( new NIDError(error, response) );
     return;
   }
   else
