@@ -25,3 +25,19 @@ atomic<R>(
   callback?: Callback<R>
 ): Promise<R>;
 ```
+
+
+@types/uuid": "^3.4.6
+
+node_modules/@types/uuid/index.d.ts
+
+import { v1, v4, v5 } from './interfaces';
+
+interface UuidStatic {
+    v1: v1;
+    v4: v4;
+    v5: v5;
+}
+
+declare const uuid: UuidStatic & v4;
+export = uuid;
