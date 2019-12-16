@@ -28,6 +28,7 @@ atomic<R>(
 
 
 @types/uuid": "^3.4.6
+<https://github.com/DefinitelyTyped/DefinitelyTyped/pull/41061>
 
 node_modules/@types/uuid/index.d.ts
 
