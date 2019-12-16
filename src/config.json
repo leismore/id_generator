@@ -3,6 +3,7 @@
   {
     "projectName":  "id_generator",
     "appID":        "UUID_OF_THIS_APP_ID",
+    "token":        "YOUR_APP_AUTHENTICATION_KEY",
     "host":         "localhost",
     "port":         "YOUR_HOST_PORT",
     "backlog":       511,

@@ -1,0 +1,6 @@
+/**
+* @res.locals
+* {
+*   nid: {string}
+* }
+ */
