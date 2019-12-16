@@ -1,14 +1,45 @@
 # id_generator
-A generic ID and token generator for an organization.
 
-## Bug
+A generic ID and token generator for an organization. Provides:
 
-"nano": "^8.1.0",
-<https://github.com/apache/couchdb-nano/pull/187>
+1. Authentication Token
+2. Numeric ID
+3. Short ID
+4. UUID (Random)
+5. UUID (Namespace)
 
-node_modules/nano/lib/nano.d.ts
+## Donation
 
-```
+Buy me a coffee via [![PayPal Donation](https://www.paypalobjects.com/en_AU/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=SPPJPYRY4D6WC&item_name=Give+people+an+option+to+support+my+open+source+software.&currency_code=AUD&source=url)
+
+## Prerequisites
+
+1. Deploy [auth_app_self](https://github.com/leismore/auth_app_self) v1.0.2
+2. Configure CouchDB according to [id_generator_couchdb](https://github.com/leismore/id_generator_couchdb) v1.0.0
+
+## Deployment
+
+1. Configure `src/config.json`
+2. Configure `src/corsOrigin.ts`
+3. Configure `src/credential/couchdb.json`
+
+## Dependencies
+
+* LMOS Database v0.5.0
+
+## Dependency Bugs
+
+### Nano: 8.1.0
+
+[Pull Request on GitHub](https://github.com/apache/couchdb-nano/pull/187)
+
+The return value of `DocumentScope.atomic` method should be a user-customized structure instead of `OkResponse`.
+
+**Solution**
+
+Path: `node_modules/nano/lib/nano.d.ts`. Find `atomic` definition and replace it with:
+
+```typescript
 // http://docs.couchdb.org/en/latest/api/ddoc/render.html#put--db-_design-ddoc-_update-func-docid
 atomic<R>(
   designname: string,
@@ -26,12 +57,13 @@ atomic<R>(
 ): Promise<R>;
 ```
 
+### @types/uuid: 3.4.6
 
-@types/uuid": "^3.4.6
-<https://github.com/DefinitelyTyped/DefinitelyTyped/pull/41061>
+[Pull Request on GitHub](https://github.com/DefinitelyTyped/DefinitelyTyped/pull/41061)
 
-node_modules/@types/uuid/index.d.ts
+Path: `node_modules/@types/uuid/index.d.ts`. Update with:
 
+```typescript
 import { v1, v4, v5 } from './interfaces';
 
 interface UuidStatic {
@@ -39,6 +71,12 @@ interface UuidStatic {
     v4: v4;
     v5: v5;
 }
+```
 
-declare const uuid: UuidStatic & v4;
-export = uuid;
+## Copyright
+
+MIT License
+
+## Authors
+
+* [Kyle Chine](https://www.kylechine.name) (Initial Author / Dec 17, 2019)
