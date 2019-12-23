@@ -27,7 +27,7 @@ Buy me a coffee via [![PayPal Donation](https://www.paypalobjects.com/en_AU/i/bt
 
 * LMOS Database v0.5.0
 
-## Dependency Bugs
+## Dependency Bug
 
 ### Nano: 8.1.0
 
@@ -55,22 +55,6 @@ atomic<R>(
   body: any,
   callback?: Callback<R>
 ): Promise<R>;
-```
-
-### @types/uuid: 3.4.6
-
-[Pull Request on GitHub](https://github.com/DefinitelyTyped/DefinitelyTyped/pull/41061)
-
-Path: `node_modules/@types/uuid/index.d.ts`. Update with:
-
-```typescript
-import { v1, v4, v5 } from './interfaces';
-
-interface UuidStatic {
-    v1: v1;
-    v4: v4;
-    v5: v5;
-}
 ```
 
 ## Copyright
