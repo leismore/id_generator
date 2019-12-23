@@ -9,7 +9,8 @@ import { NIDResponse }   from '../lib/NIDResponse';
 import { connect_db }    from '../lib/connect_db';
 import { get_numericID } from '../lib/get_numericID';
 import { MyOrg }         from '../lib/type/db_doc_myorg';
-const DB_NAME            = 'myorg';
+import * as CONFIG       from '../config.json';
+const DB_NAME            = CONFIG.couchdb.dbPrefix + '_myorg';
 
 function get_handler2(_req:express.Request, res:express.Response, next:express.NextFunction):void
 {
