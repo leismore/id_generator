@@ -20,6 +20,16 @@ async function author(input:AuthorInputs):Promise<any>
     auth: {
       username: input.authen.appID,
       password: input.authen.token
+    },
+    validateStatus: (statusCode:number) => {
+      if (statusCode === 403)
+      {
+        return true;
+      }
+      else
+      {
+        return (statusCode >= 200 && statusCode < 300);
+      }
     }
   };
 

@@ -49,6 +49,11 @@ function get_handler1(req:express.Request, _res:express.Response, next:express.N
   };
 
   author(authorInputs).then(r => {
+    if (r.status === 403)
+    {
+      next( new TokenError(ERROR.err, ERROR.res) );
+      return;
+    }
     if (r.data.result === true)
     {
       next();
