@@ -4,7 +4,7 @@
 
 // Import modules
 import * as express           from 'express';
-import cors                   = require('cors');
+import * as cors              from 'cors';
 import { corsOrigin }         from './corsOrigin';
 import { error_handler_last } from '@leismore/error_handler_last';
 import * as token             from './token/index';

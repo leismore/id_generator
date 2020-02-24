@@ -15,13 +15,8 @@
     "appID":         "UUID_OF_AUTH_APP_SELF",
     "api":
     {
-      "authen": {
-        "url": "HTTPS://AUTHENTICATION_URL",
-        "timeout": 10000
-      },
       "author": {
-        "url": "HTTPS://AUTHORIZATION_URL",
-        "timeout": 10000
+        "url": "HTTPS://AUTHORIZATION_URL"
       }
     }
   },
