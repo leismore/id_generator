@@ -39,7 +39,7 @@
     "@leismore/lmerror": "^4.1.0",
     "@leismore/response": "^3.0.2",
     "@leismore/token": "^3.0.3",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "basic-auth": "^2.0.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
