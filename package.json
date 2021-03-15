@@ -6,7 +6,19 @@
   "types": "./dist/index.d.ts",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start-server": "ts-node ./src/index.ts",
+    "start-test1": "mocha ./test/test1.ts",
+    "start-test2": "mocha ./test/test2.ts",
+    "start-test3": "mocha ./test/test3.ts",
+    "start-test4": "mocha ./test/test4.ts",
+    "start-test5": "mocha ./test/test5.ts",
+    "test1": "start-server-and-test start-server http://localhost:8081/api/token      start-test1",
+    "test2": "start-server-and-test start-server http://localhost:8081/api/numeric-id start-test2",
+    "test3": "start-server-and-test start-server http://localhost:8081/api/short-id   start-test3",
+    "test4": "start-server-and-test start-server http://localhost:8081/api/uuid-rand  start-test4",
+    "test5": "start-server-and-test start-server http://localhost:8081/api/uuid-ns    start-test5",
+    "test": "npm run test1; npm run test2; npm run test3; npm run test4; npm run test5",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
