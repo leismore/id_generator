@@ -2,28 +2,30 @@
   "app":
   {
     "projectName":  "id_generator",
-    "appID":        "UUID_OF_THIS_APP_ID",
-    "token":        "YOUR_APP_AUTHENTICATION_KEY",
+    "appID":        "151551fb-6172-49ba-aa8c-c826b3082729",
+    "token":        "Brq2qbqK1pgcEGDpoNL2ki",
     "host":         "localhost",
-    "port":         "YOUR_HOST_PORT",
+    "port":         "8081",
     "backlog":       511,
-    "domain":       "YOUR-DOMAIN.COM"
+    "domain":       "localhost",
+    "publicPort":   "8081",
+    "ssl":          false
   },
 
   "auth_app_self":
   {
-    "appID":         "UUID_OF_AUTH_APP_SELF",
+    "appID":         "29f4a510-9c34-40ad-a194-4ff0f5ace9f3",
     "api":
     {
       "author": {
-        "url": "HTTPS://AUTHORIZATION_URL"
+        "url": "http://localhost:8080/api/authorizer"
       }
     }
   },
 
   "myorg":
   {
-    "orgID": "UUID_OF_YOUR_ORG"
+    "orgID": "b69d9554-3ab0-4a46-8b93-65b1dadc5070"
   },
 
   "couchdb":
