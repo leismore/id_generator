@@ -1,6 +1,6 @@
 {
   "name": "@leismore/id_generator",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "A generic ID and token generator for an organization.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
