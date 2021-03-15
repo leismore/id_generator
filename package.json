@@ -43,7 +43,6 @@
     "@types/express": "^4.17.11",
     "@types/mocha": "^8.2.1",
     "@types/node": "^14.14.34",
-    "@types/shortid": "0.0.29",
     "@types/uuid": "^8.3.0",
     "chai": "^4.3.4",
     "mocha": "^8.3.2",
@@ -64,7 +63,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "nano": "^9.0.3",
-    "shortid": "^2.2.16",
+    "nanoid": "^3.1.21",
     "uuid": "^8.3.2"
   }
 }
