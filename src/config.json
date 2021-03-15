@@ -3,7 +3,6 @@
   {
     "projectName":  "id_generator",
     "appID":        "151551fb-6172-49ba-aa8c-c826b3082729",
-    "token":        "Brq2qbqK1pgcEGDpoNL2ki",
     "host":         "localhost",
     "port":         "8081",
     "backlog":       511,

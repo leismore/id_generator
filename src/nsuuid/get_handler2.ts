@@ -6,6 +6,7 @@ import * as express                             from 'express';
 import { default as axios, AxiosRequestConfig } from 'axios';
 import { NSUUIDError }                          from '../lib/NSUUIDError';
 import * as CONFIG                              from '../config.json';
+import * as CRED_SELF                           from '../credential/self.json';
 const API = {
   url:     ( (CONFIG.app.ssl ? 'https' : 'http') + '://' +
               CONFIG.app.domain + ':'  +
@@ -16,7 +17,7 @@ const API = {
   timeout: CONFIG.api.numeric.timeout
 };
 const CLIENT_ID  = CONFIG.app.appID;
-const TOKEN      = CONFIG.app.token;
+const TOKEN      = CRED_SELF.token;
 
 function get_handler2(_req:express.Request, res:express.Response, next:express.NextFunction):void
 {
