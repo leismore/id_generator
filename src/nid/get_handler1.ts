@@ -3,7 +3,7 @@
  */
 
 import { NIDError }       from '../lib/NIDError';
-import { generator }      from '@leismore/authappself_handler';
+import { authAppSelf_handler_generator as generator } from '@leismore/authappself_handler';
 import * as CONFIG        from '../config.json';
 const API        = CONFIG.auth_app_self.api.author.url;
 const HOST_APP   = {

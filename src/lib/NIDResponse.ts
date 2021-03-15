@@ -3,7 +3,7 @@
  * Refer to @leismore/response <https://www.npmjs.com/package/@leismore/response>
  */
 
-import { Response } from '@leismore/response';
+import { LMResponse as Response } from '@leismore/response';
 
 class NIDResponse extends Response
 {

@@ -7,9 +7,12 @@ import { default as axios, AxiosRequestConfig } from 'axios';
 import { NSUUIDError }                          from '../lib/NSUUIDError';
 import * as CONFIG                              from '../config.json';
 const API = {
-  url:     ('https://' + CONFIG.app.domain  +
-                         CONFIG.api.baseURL +
-                         CONFIG.api.numeric.url),
+  url:     ( (CONFIG.app.ssl ? 'https' : 'http') + '://' +
+              CONFIG.app.domain + ':'  +
+              CONFIG.app.publicPort    +
+              CONFIG.api.baseURL       +
+              CONFIG.api.numeric.url
+           ),
   timeout: CONFIG.api.numeric.timeout
 };
 const CLIENT_ID  = CONFIG.app.appID;

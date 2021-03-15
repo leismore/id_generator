@@ -2,7 +2,9 @@
  * All Handler 1 - Prevent not-allowed HTTP methods
  */
 
-import { generator, gen_response } from '@leismore/all_handler';
+import {
+    all_handler_generator            as generator,
+    all_handler_LMErrorRes_generator as gen_response } from '@leismore/all_handler';
 import { NIDError }                from '../lib/NIDError';
 const ALLOWED        = ['OPTIONS', 'GET'];
 const ERROR          = new NIDError({message: 'HTTP 405: Method Not Allowed', code: '3'}, gen_response(ALLOWED));

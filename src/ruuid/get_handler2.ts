@@ -3,7 +3,7 @@
  */
 
 import * as express      from 'express';
-import * as uuid4        from 'uuid/v4';
+import { v4 as uuid4 }   from 'uuid';
 import { RUUIDResponse } from '../lib/RUUIDResponse';
 
 function get_handler2(_req:express.Request, res:express.Response, _next:express.NextFunction):void

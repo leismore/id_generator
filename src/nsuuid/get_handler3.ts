@@ -3,7 +3,7 @@
  */
 
 import * as express       from 'express';
-import * as uuid5         from 'uuid/v5';
+import { v5 as uuid5 }    from 'uuid';
 import { NSUUIDResponse } from '../lib/NSUUIDResponse';
 import * as CONFIG        from '../config.json';
 const NS = CONFIG.myorg.orgID;

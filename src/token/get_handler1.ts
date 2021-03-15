@@ -2,7 +2,7 @@
  * GET Handler 1 - Auth
  */
 
-import { generator }      from '@leismore/authappself_handler';
+import { authAppSelf_handler_generator as generator } from '@leismore/authappself_handler';
 import { TokenError }     from '../lib/TokenError';
 import * as CONFIG        from '../config.json';
 const API        = CONFIG.auth_app_self.api.author.url;
