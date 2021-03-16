@@ -22,7 +22,7 @@ describe('ID Generator - 3. Short ID', function(){
       (
         ( res.status === 200 &&
           String(res.headers['content-type']).includes('application/json') &&
-          ( typeof res.data.id === 'string' && res.data.id.length !== 0 )
+          ( typeof res.data.id === 'string' && res.data.id.length === APP_CONFIG.api.short.length )
         ),
         'Invalid data'
       );
