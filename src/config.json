@@ -47,11 +47,10 @@
       "timeout": 10000
     },
     "short":  {
-      "url":     "short-id",
-      "timeout": 10000,
-      "characters": "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_",
-      "worker":     0,
-      "seed":       1
+      "url":        "short-id",
+      "timeout":    10000,
+      "characters": "nolookalikes",
+      "length":     20
     },
     "uuidRand":  {
       "url":     "uuid-rand",

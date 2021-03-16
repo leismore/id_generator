@@ -22,6 +22,7 @@ Buy me a coffee via [![PayPal Donation](https://www.paypalobjects.com/en_AU/i/bt
 1. Configure `src/config.json`
 2. Configure `src/corsOrigin.ts`
 3. Configure `src/credential/couchdb.json`
+4. Configure `src/credential/self.json`
 
 ## Test
 
