@@ -12,7 +12,7 @@ import { MyOrg }         from '../lib/type/db_doc_myorg';
 import * as CONFIG       from '../config.json';
 const DB_NAME            = CONFIG.couchdb.dbPrefix + '_myorg';
 
-function get_handler2(_req:express.Request, res:express.Response, next:express.NextFunction):void
+function get_handler2(req:express.Request, res:express.Response, next:express.NextFunction):void
 {
   let resp = new NIDResponse(res);
   let db:nano.DocumentScope<MyOrg>;
@@ -31,7 +31,7 @@ function get_handler2(_req:express.Request, res:express.Response, next:express.N
   }
 
   // Get ID
-  get_numericID(db).then(r => {
+  get_numericID(db, req.app.locals.myorg.orgID).then(r => {
     resp.res200(r.status);
     return;
   }).catch(e => {

@@ -22,11 +22,6 @@
     }
   },
 
-  "myorg":
-  {
-    "orgID": "b69d9554-3ab0-4a46-8b93-65b1dadc5070"
-  },
-
   "couchdb":
   {
     "designName":   "id_generator",

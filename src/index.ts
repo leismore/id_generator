@@ -1,5 +1,13 @@
 /**
  * The main script of id_generator project
+ * 
+ * @app.locals
+ * {
+ *   myorg:
+ *   {
+ *     orgID: {UUID} - The organization operating this application
+ *   }
+ * }
  */
 
 // Import modules
@@ -8,6 +16,7 @@ import * as cors              from 'cors';
 import { corsOrigin }         from './corsOrigin';
 import { get_handler as head_handler } from '@leismore/get_handler';
 import { error_handler_last } from '@leismore/error_handler_last';
+import * as init              from './init/index';
 import * as token             from './token/index';
 import * as nid               from './nid/index';
 import * as sid               from './sid/index';
@@ -22,7 +31,7 @@ const corsOptions:cors.CorsOptions = {
 
 // Init.
 let app = express();
-app.use( cors(corsOptions) );
+app.use( init.init_handler1, cors(corsOptions) );
 
 // 1. Token
 const        TOKEN_URL = CONFIG.api.baseURL + CONFIG.api.token.url;

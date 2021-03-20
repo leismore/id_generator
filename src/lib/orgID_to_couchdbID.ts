@@ -5,12 +5,11 @@ import * as NANO     from 'nano';
 import * as CONFIG   from '../config.json';
 const DESIGN_NAME    = CONFIG.couchdb.designName;
 const VIEW_NAME      = 'orgID_to_couchdbID';
-const ORGID          = CONFIG.myorg.orgID;
 
-async function orgID_to_couchdbID(db:NANO.DocumentScope<MyOrg>)
+async function orgID_to_couchdbID(db:NANO.DocumentScope<MyOrg>, orgid:string)
   :Promise<NANO.DocumentViewResponse<string,MyOrg>>
 {
-  return db.view(DESIGN_NAME, VIEW_NAME, {key: ORGID});
+  return db.view(DESIGN_NAME, VIEW_NAME, {key: orgid});
 }
 
 export { orgID_to_couchdbID };

@@ -9,14 +9,14 @@ import * as CONFIG                            from '../config.json';
 const DESIGN_NAME                             = CONFIG.couchdb.designName;
 const UPDATE_NAME                             = 'get_numeric_id';
 
-async function get_numericID(db:NANO.DocumentScope<MyOrg>)
+async function get_numericID(db:NANO.DocumentScope<MyOrg>, orgid:string)
   :Promise<Response>
 {
   let couchdbID:NANO.DocumentViewResponse<string, MyOrg>;
 
   try
   {
-    couchdbID = await orgID_to_couchdbID(db);
+    couchdbID = await orgID_to_couchdbID(db, orgid);
   }
   catch (e)
   {
