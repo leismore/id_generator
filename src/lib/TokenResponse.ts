@@ -13,7 +13,7 @@ class TokenResponse extends Response
       statusCode: '200',
       headers: { 'Content-Type'  : 'application/json',
                  'Cache-Control' : 'no-store' },
-      body: {'token': token}
+      body: {'token': token, 'generated': Date.now()}
     });
   }
 }
