@@ -8,6 +8,9 @@
  * 3              HTTP 405: Method Not Allowed
  * 4              authorization failure
  * 5              auth_app_self failure
+ * 6              invalid input: orgID
+ * 7              is_valid_orgID failure
+ * 8              get_numericID_org failure
  */
 
 import { LMError } from '@leismore/lmerror';
