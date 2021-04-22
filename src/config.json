@@ -33,14 +33,14 @@
     "baseURL": "/api/",
     "token":  {
       "url":          "token",
-      "methods":      ["OPTIONS", "HEAD", "GET"],
+      "methods":      ["HEAD", "GET"],
       "timeout":      10000,
       "bitSize":      128,
       "baseEncoding": "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
     },
     "numeric":  {
       "url":          "numeric-id",
-      "methods":      ["OPTIONS", "HEAD", "GET"],
+      "methods":      ["HEAD", "GET"],
       "timeout":      10000
     },
     "numericOrg": {
@@ -55,19 +55,19 @@
     },
     "short":  {
       "url":          "short-id",
-      "methods":      ["OPTIONS", "HEAD", "GET"],
+      "methods":      ["HEAD", "GET"],
       "timeout":      10000,
       "characters":   "nolookalikes",
       "length":       20
     },
     "uuidRand":  {
       "url":          "uuid-rand",
-      "methods":      ["OPTIONS", "HEAD", "GET"],
+      "methods":      ["HEAD", "GET"],
       "timeout":      10000
     },
     "uuidNS":  {
       "url":          "uuid-ns",
-      "methods":      ["OPTIONS", "HEAD", "GET"],
+      "methods":      ["HEAD", "GET"],
       "timeout":      10000
     },
     "uuidNSOrg": {

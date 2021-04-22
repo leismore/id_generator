@@ -34,7 +34,6 @@ app.use( init.init_handler1 );
 const        TOKEN_URL = CONFIG.api.baseURL + CONFIG.api.token.url;
 app.use(     TOKEN_URL, token.cors_handler );
 app.all(     TOKEN_URL, token.all_handler1 );
-app.options( TOKEN_URL, ()=>{} );
 app.head(    TOKEN_URL, head_handler );
 app.get(     TOKEN_URL, token.get_handler1, token.get_handler2 );
 
@@ -42,7 +41,6 @@ app.get(     TOKEN_URL, token.get_handler1, token.get_handler2 );
 const        NID_URL = CONFIG.api.baseURL + CONFIG.api.numeric.url;
 app.use(     NID_URL, nid.cors_handler );
 app.all(     NID_URL, nid.all_handler1 );
-app.options( NID_URL, ()=>{} );
 app.head(    NID_URL, head_handler );
 app.get(     NID_URL, nid.get_handler1, nid.get_handler2 );
 
@@ -76,7 +74,6 @@ app.post(    NID_USER_URL,
 const        SID_URL = CONFIG.api.baseURL + CONFIG.api.short.url;
 app.use(     SID_URL, sid.cors_handler );
 app.all(     SID_URL, sid.all_handler1 );
-app.options( SID_URL, ()=>{} );
 app.head(    SID_URL, head_handler );
 app.get(     SID_URL, sid.get_handler1, sid.get_handler2 );
 
@@ -84,7 +81,6 @@ app.get(     SID_URL, sid.get_handler1, sid.get_handler2 );
 const        RUUID_URL = CONFIG.api.baseURL + CONFIG.api.uuidRand.url;
 app.use(     RUUID_URL, ruuid.cors_handler );
 app.all(     RUUID_URL, ruuid.all_handler1 );
-app.options( RUUID_URL, ()=>{} );
 app.head(    RUUID_URL, head_handler );
 app.get(     RUUID_URL, ruuid.get_handler1, ruuid.get_handler2 );
 
@@ -92,7 +88,6 @@ app.get(     RUUID_URL, ruuid.get_handler1, ruuid.get_handler2 );
 const        NSUUID_URL = CONFIG.api.baseURL + CONFIG.api.uuidNS.url;
 app.use(     NSUUID_URL, nsuuid.cors_handler );
 app.all(     NSUUID_URL, nsuuid.all_handler1 );
-app.options( NSUUID_URL, ()=>{} );
 app.head(    NSUUID_URL, head_handler );
 app.get(     NSUUID_URL, nsuuid.get_handler1, nsuuid.get_handler2, nsuuid.get_handler3 );
 
