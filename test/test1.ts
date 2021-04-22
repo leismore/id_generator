@@ -12,7 +12,7 @@ const API = (
 
 describe('ID Generator - 1. Token', function(){
 
-  it('Should return a token', function(){
+  it('Should return a token and timestamp', function(){
     return axios.get( API, { auth:
       { username: TEST_CONFIG.client.appID,
         password: TEST_CONFIG.client.token } }
@@ -22,7 +22,8 @@ describe('ID Generator - 1. Token', function(){
       (
         ( res.status === 200 &&
           String(res.headers['content-type']).includes('application/json') &&
-          ( typeof res.data.token === 'string' && res.data.token.length !== 0 )
+          ( typeof res.data.token === 'string' && res.data.token.length !== 0 ) &&
+            typeof res.data.generated === 'number'
         ),
         'Invalid data'
       );

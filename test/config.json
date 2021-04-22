@@ -3,5 +3,15 @@
     {
         "appID" : "a08333f9-404c-4a0c-9d21-7c2a13d8e0ae",
         "token" : "GnFArUyUHozg7hh3w1B61j"
+    },
+
+    "org":
+    {
+        "orgID": "25b23e2b-46e5-4d97-b482-61ea17f5be0b"
+    },
+
+    "user":
+    {
+        "userID": "10472956-ab23-4c6a-a46f-3aa9cd57b6d1"
     }
 }

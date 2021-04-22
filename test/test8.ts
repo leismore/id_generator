@@ -1,4 +1,4 @@
-// Testing 4. Numeric ID (User)
+// Testing 8. UUID (Namespace) Org
 
 import { assert }       from 'chai';
 import axios            from 'axios';
@@ -7,15 +7,13 @@ import * as TEST_CONFIG from      './config.json';
 
 const API = (
   (APP_CONFIG.app.ssl ? 'https' : 'http') + '://' +
-  `${APP_CONFIG.app.domain}:${APP_CONFIG.app.publicPort}${APP_CONFIG.api.baseURL}${APP_CONFIG.api.numericUser.url}`
+  `${APP_CONFIG.app.domain}:${APP_CONFIG.app.publicPort}${APP_CONFIG.api.baseURL}${APP_CONFIG.api.uuidNSOrg.url}`
 );
 
-const pattern = /^\d+$/;
+describe('ID Generator - 8. UUID (Namespace) Org', function(){
 
-describe('ID Generator - 4. Numeric ID (User)', function(){
-
-  it('Should return a numeric ID', function(){
-    return axios.post( API, {userID: TEST_CONFIG.user.userID}, { auth:
+  it('Should return an UUID (Namespace)', function(){
+    return axios.post( API, {orgID: TEST_CONFIG.org.orgID}, { auth:
       { username: TEST_CONFIG.client.appID,
         password: TEST_CONFIG.client.token }, headers:{'Content-Type': 'application/json'} }
     )
@@ -24,7 +22,7 @@ describe('ID Generator - 4. Numeric ID (User)', function(){
       (
         ( res.status === 200 &&
           String(res.headers['content-type']).includes('application/json') &&
-          pattern.test(res.data.id)
+          ( typeof res.data.id === 'string' && res.data.id.length !== 0 )
         ),
         'Invalid data'
       );

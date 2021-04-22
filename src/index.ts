@@ -28,7 +28,7 @@ import * as CONFIG            from './config.json';
 
 // Init.
 let app = express();
-app.use( init.init_handler1 );
+app.use( init.init_handler1, express.json() );
 
 // 1. Token
 const        TOKEN_URL = CONFIG.api.baseURL + CONFIG.api.token.url;

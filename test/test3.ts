@@ -1,4 +1,4 @@
-// Testing 3. Short ID
+// Testing 3. Numeric ID (Org)
 
 import { assert }       from 'chai';
 import axios            from 'axios';
@@ -7,22 +7,24 @@ import * as TEST_CONFIG from      './config.json';
 
 const API = (
   (APP_CONFIG.app.ssl ? 'https' : 'http') + '://' +
-  `${APP_CONFIG.app.domain}:${APP_CONFIG.app.publicPort}${APP_CONFIG.api.baseURL}${APP_CONFIG.api.short.url}`
+  `${APP_CONFIG.app.domain}:${APP_CONFIG.app.publicPort}${APP_CONFIG.api.baseURL}${APP_CONFIG.api.numericOrg.url}`
 );
 
-describe('ID Generator - 3. Short ID', function(){
+const pattern = /^\d+$/;
 
-  it('Should return a short ID', function(){
-    return axios.get( API, { auth:
+describe('ID Generator - 3. Numeric ID (Org)', function(){
+
+  it('Should return a numeric ID', function(){
+    return axios.post( API, {orgID: TEST_CONFIG.org.orgID}, { auth:
       { username: TEST_CONFIG.client.appID,
-        password: TEST_CONFIG.client.token } }
+        password: TEST_CONFIG.client.token }, headers:{'Content-Type': 'application/json'} }
     )
     .then( res => {
       assert
       (
         ( res.status === 200 &&
           String(res.headers['content-type']).includes('application/json') &&
-          ( typeof res.data.id === 'string' && res.data.id.length === APP_CONFIG.api.short.length )
+          pattern.test(res.data.id)
         ),
         'Invalid data'
       );
