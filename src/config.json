@@ -32,44 +32,53 @@
   {
     "baseURL": "/api/",
     "token":  {
-      "url":     "token",
-      "timeout": 10000,
-      "bitSize": 128,
+      "url":          "token",
+      "methods":      ["OPTIONS", "HEAD", "GET"],
+      "timeout":      10000,
+      "bitSize":      128,
       "baseEncoding": "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
     },
     "numeric":  {
-      "url":     "numeric-id",
-      "timeout": 10000
+      "url":          "numeric-id",
+      "methods":      ["OPTIONS", "HEAD", "GET"],
+      "timeout":      10000
     },
     "numericOrg": {
-      "url": "numeric-id/org",
-      "timeout": 10000
+      "url":          "numeric-id/org",
+      "methods":      ["OPTIONS", "HEAD", "GET", "POST"],
+      "timeout":      10000
     },
     "numericUser": {
-      "url": "numeric-id/user",
-      "timeout": 10000
+      "url":          "numeric-id/user",
+      "methods":      ["OPTIONS", "HEAD", "GET", "POST"],
+      "timeout":      10000
     },
     "short":  {
-      "url":        "short-id",
-      "timeout":    10000,
-      "characters": "nolookalikes",
-      "length":     20
+      "url":          "short-id",
+      "methods":      ["OPTIONS", "HEAD", "GET"],
+      "timeout":      10000,
+      "characters":   "nolookalikes",
+      "length":       20
     },
     "uuidRand":  {
-      "url":     "uuid-rand",
-      "timeout": 10000
+      "url":          "uuid-rand",
+      "methods":      ["OPTIONS", "HEAD", "GET"],
+      "timeout":      10000
     },
     "uuidNS":  {
-      "url":     "uuid-ns",
-      "timeout": 10000
+      "url":          "uuid-ns",
+      "methods":      ["OPTIONS", "HEAD", "GET"],
+      "timeout":      10000
     },
     "uuidNSOrg": {
-      "url": "uuid-ns/org",
-      "timeout": 10000
+      "url":          "uuid-ns/org",
+      "methods":      ["OPTIONS", "HEAD", "GET", "POST"],
+      "timeout":      10000
     },
     "uuidNSUser": {
-      "url": "uuid-ns/user",
-      "timeout": 10000
+      "url":          "uuid-ns/user",
+      "methods":      ["OPTIONS", "HEAD", "GET", "POST"],
+      "timeout":      10000
     }
   }
 }

@@ -6,7 +6,8 @@ import {
     all_handler_generator            as generator,
     all_handler_LMErrorRes_generator as gen_response } from '@leismore/all_handler';
 import { NSUUIDError }             from '../lib/NSUUIDError';
-const ALLOWED      = ['OPTIONS', 'HEAD', 'GET'];
+import * as CONFIG                 from '../config.json';
+const ALLOWED      = CONFIG.api.uuidNS.methods;
 const ERROR        = new NSUUIDError({message: 'HTTP 405: Method Not Allowed', code: '3'}, gen_response(ALLOWED));
 const all_handler1 = generator(ALLOWED, ERROR);
 
