@@ -2,7 +2,7 @@
  * Init Handler 1 - Set the orgID (myorg) for this application
  */
 
-import * as express    from 'express';
+import { Request, Response, NextFunction } from 'express';
 import * as nano       from 'nano';
 import { InitError }   from '../lib/InitError';
 import { connect_db }  from '../lib/connect_db';
@@ -11,7 +11,7 @@ import { PrivateApp }  from '../lib/type/db_doc_privateApp';
 import * as CONFIG     from '../config.json';
 const DB_NAME          = CONFIG.couchdb.dbPrefix + '_private_app';
 
-function init_handler1(req:express.Request, res:express.Response, next:express.NextFunction):void
+function init_handler1(req:Request, res:Response, next:NextFunction):void
 {
   let db:nano.DocumentScope<PrivateApp>;
 

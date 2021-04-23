@@ -2,7 +2,7 @@
  * GET Handler 2 - Send new numeric ID
  */
 
-import * as express      from 'express';
+import { Request, Response, NextFunction } from 'express';
 import * as nano         from 'nano';
 import { NIDError }      from '../lib/NIDError';
 import { NIDResponse }   from '../lib/NIDResponse';
@@ -12,7 +12,7 @@ import { MyOrg }         from '../lib/type/db_doc_myorg';
 import * as CONFIG       from '../config.json';
 const DB_NAME            = CONFIG.couchdb.dbPrefix + '_myorg';
 
-function get_handler2(req:express.Request, res:express.Response, next:express.NextFunction):void
+function get_handler2(req:Request, res:Response, next:NextFunction):void
 {
   let resp = new NIDResponse(res);
   let db:nano.DocumentScope<MyOrg>;

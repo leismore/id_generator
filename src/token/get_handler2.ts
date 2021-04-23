@@ -1,6 +1,6 @@
 // GET Handler 2: Generate token
 
-import * as express      from 'express';
+import { Request, Response, NextFunction } from 'express';
 import { Token }         from '@leismore/token';
 import { TokenError }    from '../lib/TokenError';
 import { TokenResponse } from '../lib/TokenResponse';
@@ -8,7 +8,7 @@ import * as CONFIG       from '../config.json';
 const BIT_SIZE      = CONFIG.api.token.bitSize;
 const BASE_ENCODING = CONFIG.api.token.baseEncoding;
 
-function get_handler2(_req:express.Request, res:express.Response, next:express.NextFunction):void
+function get_handler2(req:Request, res:Response, next:NextFunction):void
 {
   let resp = new TokenResponse(res);
 

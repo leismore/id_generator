@@ -2,7 +2,7 @@
  * GET Handler 2 - Get numeric ID
  */
 
-import * as express                             from 'express';
+import { Request, Response, NextFunction }      from 'express';
 import { default as axios, AxiosRequestConfig } from 'axios';
 import { NSUUIDError }                          from '../lib/NSUUIDError';
 import * as CONFIG                              from '../config.json';
@@ -19,7 +19,7 @@ const API = {
 const CLIENT_ID  = CONFIG.app.appID;
 const TOKEN      = CRED_SELF.token;
 
-function get_handler2(_req:express.Request, res:express.Response, next:express.NextFunction):void
+function get_handler2(req:Request, res:Response, next:NextFunction):void
 {
   let axiosConfig:AxiosRequestConfig = {
     url:             API.url,
