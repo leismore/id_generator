@@ -18,8 +18,8 @@ Buy me a coffee via [![PayPal Donation](https://www.paypalobjects.com/en_AU/i/bt
 
 ## Prerequisites
 
-1. Deploy [auth_app_self](https://github.com/leismore/auth_app_self) v2.0.2
-2. Configure CouchDB according to [id_generator_couchdb](https://github.com/leismore/id_generator_couchdb) v3.1.0
+1. Deploy [auth_app_self](https://github.com/leismore/auth_app_self) v2.0.3
+2. Configure CouchDB according to [id_generator_couchdb](https://github.com/leismore/id_generator_couchdb) v3.1.1
 
 ## Deployment
 
