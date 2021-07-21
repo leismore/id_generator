@@ -60,6 +60,13 @@
       "characters":   "nolookalikes",
       "length":       20
     },
+    "shorter":  {
+      "url":          "shorter-id",
+      "methods":      ["HEAD", "GET"],
+      "timeout":      10000,
+      "characters":   "346789ABCDEFGHJKMNPQRTWXY",
+      "length":       16
+    },
     "uuidRand":  {
       "url":          "uuid-rand",
       "methods":      ["HEAD", "GET"],
