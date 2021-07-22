@@ -1,4 +1,4 @@
-// Testing 6. Shorter ID
+// Testing 10. UUID (Namespace) User
 
 import { assert }       from 'chai';
 import axios            from 'axios';
@@ -7,22 +7,22 @@ import * as TEST_CONFIG from      './config.json';
 
 const API = (
   (APP_CONFIG.app.ssl ? 'https' : 'http') + '://' +
-  `${APP_CONFIG.app.domain}:${APP_CONFIG.app.publicPort}${APP_CONFIG.api.baseURL}${APP_CONFIG.api.shorter.url}`
+  `${APP_CONFIG.app.domain}:${APP_CONFIG.app.publicPort}${APP_CONFIG.api.baseURL}${APP_CONFIG.api.uuidNSUser.url}`
 );
 
-describe('ID Generator - 6. Shorter ID', function(){
+describe('ID Generator - 10. UUID (Namespace) User', function(){
 
-  it('Should return a shorter ID', function(){
-    return axios.get( API, { auth:
+  it('Should return an UUID (Namespace)', function(){
+    return axios.post( API, {userID: TEST_CONFIG.user.userID}, { auth:
       { username: TEST_CONFIG.client.appID,
-        password: TEST_CONFIG.client.token } }
+        password: TEST_CONFIG.client.token }, headers:{'Content-Type': 'application/json'} }
     )
     .then( res => {
       assert
       (
         ( res.status === 200 &&
           String(res.headers['content-type']).includes('application/json') &&
-          ( typeof res.data.id === 'string' && res.data.id.length === APP_CONFIG.api.shorter.length )
+          ( typeof res.data.id === 'string' && res.data.id.length !== 0 )
         ),
         'Invalid data'
       );

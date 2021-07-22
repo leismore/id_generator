@@ -1,4 +1,4 @@
-// Testing 7. UUID (Namespace)
+// Testing 7. UUID (Random)
 
 import { assert }       from 'chai';
 import axios            from 'axios';
@@ -7,12 +7,12 @@ import * as TEST_CONFIG from      './config.json';
 
 const API = (
   (APP_CONFIG.app.ssl ? 'https' : 'http') + '://' +
-  `${APP_CONFIG.app.domain}:${APP_CONFIG.app.publicPort}${APP_CONFIG.api.baseURL}${APP_CONFIG.api.uuidNS.url}`
+  `${APP_CONFIG.app.domain}:${APP_CONFIG.app.publicPort}${APP_CONFIG.api.baseURL}${APP_CONFIG.api.uuidRand.url}`
 );
 
-describe('ID Generator - 7. UUID (Namespace)', function(){
+describe('ID Generator - 7. UUID (Random)', function(){
 
-  it('Should return an UUID (Namespace)', function(){
+  it('Should return an UUID (random)', function(){
     return axios.get( API, { auth:
       { username: TEST_CONFIG.client.appID,
         password: TEST_CONFIG.client.token } }

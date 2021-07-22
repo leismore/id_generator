@@ -1,4 +1,4 @@
-// Testing 9. UUID (Namespace) User
+// Testing 9. UUID (Namespace) Org
 
 import { assert }       from 'chai';
 import axios            from 'axios';
@@ -7,13 +7,13 @@ import * as TEST_CONFIG from      './config.json';
 
 const API = (
   (APP_CONFIG.app.ssl ? 'https' : 'http') + '://' +
-  `${APP_CONFIG.app.domain}:${APP_CONFIG.app.publicPort}${APP_CONFIG.api.baseURL}${APP_CONFIG.api.uuidNSUser.url}`
+  `${APP_CONFIG.app.domain}:${APP_CONFIG.app.publicPort}${APP_CONFIG.api.baseURL}${APP_CONFIG.api.uuidNSOrg.url}`
 );
 
-describe('ID Generator - 9. UUID (Namespace) User', function(){
+describe('ID Generator - 9. UUID (Namespace) Org', function(){
 
   it('Should return an UUID (Namespace)', function(){
-    return axios.post( API, {userID: TEST_CONFIG.user.userID}, { auth:
+    return axios.post( API, {orgID: TEST_CONFIG.org.orgID}, { auth:
       { username: TEST_CONFIG.client.appID,
         password: TEST_CONFIG.client.token }, headers:{'Content-Type': 'application/json'} }
     )
