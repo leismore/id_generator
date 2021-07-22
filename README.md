@@ -1,16 +1,17 @@
 # Leismore ID Generator (id_generator)
 
-A generic ID and token generator for any organization. It provides:
+A general ID and token generator for any organization. It provides:
 
-1. Authentication Token
-2. Numeric ID
-3. Numeric ID for 3rd-party organizations
-4. Numeric ID for users
-5. Short ID
-6. UUID (Random)
-7. UUID (Namespace)
-8. UUID (Namespace) for 3rd-party organizations
-9. UUID (Namespace) for users
+1.  Authentication Token
+2.  Numeric ID
+3.  Numeric ID for 3rd-party organizations
+4.  Numeric ID for users
+5.  Short ID
+6.  Shorter ID
+7.  UUID (Random)
+8.  UUID (Namespace)
+9.  UUID (Namespace) for 3rd-party organizations
+10. UUID (Namespace) for users
 
 ## Donation
 
@@ -36,7 +37,7 @@ Buy me a coffee via [![PayPal Donation](https://www.paypalobjects.com/en_AU/i/bt
 
 ## Dependencies
 
-* LMOS Database v2.0.0
+* LMOS CouchDB v2.1.0
 
 ## Copyright
 
