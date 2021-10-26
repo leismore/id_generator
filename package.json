@@ -66,6 +66,7 @@
     "@leismore/authappself_handler": "^3.0.0",
     "@leismore/error_handler_last": "^2.0.1",
     "@leismore/get_handler": "^2.0.1",
+    "@leismore/insert_separator": "^1.0.1",
     "@leismore/lmerror": "^6.0.0",
     "@leismore/response": "^5.0.0",
     "@leismore/token": "^6.0.0",
