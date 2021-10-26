@@ -5,6 +5,8 @@ import axios            from 'axios';
 import * as  APP_CONFIG from '../src/config.json';
 import * as TEST_CONFIG from      './config.json';
 
+const PATTERN = /^([346789ABCDEFGHJKMNPQRTWXY]{4}\-){3}[346789ABCDEFGHJKMNPQRTWXY]{4}$/;
+
 const API = (
   (APP_CONFIG.app.ssl ? 'https' : 'http') + '://' +
   `${APP_CONFIG.app.domain}:${APP_CONFIG.app.publicPort}${APP_CONFIG.api.baseURL}${APP_CONFIG.api.shorter.url}`
@@ -22,7 +24,7 @@ describe('ID Generator - 6. Shorter ID', function(){
       (
         ( res.status === 200 &&
           String(res.headers['content-type']).includes('application/json') &&
-          ( typeof res.data.id === 'string' && res.data.id.length === APP_CONFIG.api.shorter.length )
+          ( typeof res.data.id === 'string' && PATTERN.test(res.data.id) )
         ),
         'Invalid data'
       );
