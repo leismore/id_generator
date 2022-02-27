@@ -22,6 +22,7 @@ async function get_numericID(db:NANO.DocumentScope<MyOrg>, orgid:string)
   {
     let error    = { message: 'orgID_to_couchdbID failure', code: '4' };
     let response = { statusCode: '500' };
+    // @ts-ignore
     throw new IDError(error, response, e);
   }
 

@@ -24,6 +24,7 @@ function init_handler1(req:Request, res:Response, next:NextFunction):void
   {
     let error = {message: 'CouchDB: connection failure', code: '1'};
     let response = {statusCode: '500'};
+    // @ts-ignore
     next( new InitError(error, response, e) );
     return;
   }

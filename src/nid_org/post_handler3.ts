@@ -24,6 +24,7 @@ function post_handler3(req:Request, res:Response, next:NextFunction):void
   } catch (e) {
     let error = {message: 'CouchDB: connection failure', code: '2'};
     let response = {statusCode: '500'};
+    // @ts-ignore
     next( new NIDErrorOrg(error, response, e) );
     return;
   }

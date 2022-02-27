@@ -23,6 +23,7 @@ function connect_db():NANO.ServerScope
   } catch (e) {
     let error = { message: 'CouchDB: connection failure', code: '2' };
     let response = { statusCode:'500' };
+    // @ts-ignore
     throw new IDError(error, response, e);
   }
 }
