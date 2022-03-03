@@ -2,6 +2,7 @@
  * POST Handler 3 - Checking the existence of the input userID
  */
 
+import { unknown2error }                   from '@leismore/unknown2error';
 import { Request, Response, NextFunction } from 'express';
 import { NIDErrorUser }                    from '../lib/NIDErrorUser';
 import { connect_db }                      from '../lib/connect_db';
@@ -22,10 +23,10 @@ function post_handler3(req:Request, res:Response, next:NextFunction):void
   try {
     db = connect_db().use(DB_NAME);
   } catch (e) {
+    const f = unknown2error(e);
     let error = {message: 'CouchDB: connection failure', code: '2'};
     let response = {statusCode: '500'};
-    // @ts-ignore
-    next( new NIDErrorUser(error, response, e) );
+    next( new NIDErrorUser(error, response, f) );
     return;
   }
 

@@ -70,6 +70,7 @@
     "@leismore/lmerror": "^6.0.2",
     "@leismore/response": "^5.0.1",
     "@leismore/token": "^6.0.1",
+    "@leismore/unknown2error": "^1.0.0",
     "axios": "^0.26.0",
     "basic-auth": "^2.0.1",
     "cors": "^2.8.5",

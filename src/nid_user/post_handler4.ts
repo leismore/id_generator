@@ -2,6 +2,7 @@
  * POST Handler 4 - Get the new numeric ID
  */
 
+import { unknown2error }                   from '@leismore/unknown2error';
 import { Request, Response, NextFunction } from 'express';
 import { NIDErrorUser }                    from '../lib/NIDErrorUser';
 import { get_numericID_user as get_id }    from '../lib/get_numericID_user';
@@ -23,10 +24,10 @@ function post_handler4(req:Request, res:Response, next:NextFunction):void
     try {
         db = connect_db().use(DB_NAME);
     } catch (e) {
+        const f = unknown2error(e);
         let error = {message: 'CouchDB: connection failure', code: '2'};
         let response = {statusCode: '500'};
-        // @ts-ignore
-        next( new NIDErrorUser(error, response, e) );
+        next( new NIDErrorUser(error, response, f) );
         return;
     }
     

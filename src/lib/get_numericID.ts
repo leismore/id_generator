@@ -1,5 +1,6 @@
 // get_numericID function: call CouchDB-update function get_numeric_id (DB: myorg).
 
+import { unknown2error }                      from '@leismore/unknown2error';
 import { MyOrg }                              from './type/db_doc_myorg';
 import { UpdateRes_getNumericID as Response } from './type/db_update_getNumericID_res';
 import { orgID_to_couchdbID }                 from './orgID_to_couchdbID';
@@ -20,10 +21,10 @@ async function get_numericID(db:NANO.DocumentScope<MyOrg>, orgid:string)
   }
   catch (e)
   {
+    const f = unknown2error(e);
     let error    = { message: 'orgID_to_couchdbID failure', code: '4' };
     let response = { statusCode: '500' };
-    // @ts-ignore
-    throw new IDError(error, response, e);
+    throw new IDError(error, response, f);
   }
 
   return db.atomic<Response>(DESIGN_NAME, UPDATE_NAME, couchdbID.rows[0].value);

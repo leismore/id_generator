@@ -2,6 +2,7 @@
  * GET Handler 2 - Send new numeric ID
  */
 
+import { unknown2error }                   from '@leismore/unknown2error';
 import { Request, Response, NextFunction } from 'express';
 import * as nano         from 'nano';
 import { NIDError }      from '../lib/NIDError';
@@ -24,10 +25,10 @@ function get_handler2(req:Request, res:Response, next:NextFunction):void
   }
   catch(e)
   {
+    const f = unknown2error(e);
     let error = {message: 'CouchDB: connection failure', code: '2'};
     let response = {statusCode: '500'};
-    // @ts-ignore
-    next( new NIDError(error, response, e) );
+    next( new NIDError(error, response, f) );
     return;
   }
 

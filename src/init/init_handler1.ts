@@ -3,13 +3,14 @@
  */
 
 import { Request, Response, NextFunction } from 'express';
-import * as nano       from 'nano';
-import { InitError }   from '../lib/InitError';
-import { connect_db }  from '../lib/connect_db';
-import { get_myOrgID } from '../lib/get_myOrgID';
-import { PrivateApp }  from '../lib/type/db_doc_privateApp';
-import * as CONFIG     from '../config.json';
-const DB_NAME          = CONFIG.couchdb.dbPrefix + '_private_app';
+import * as nano         from 'nano';
+import { InitError }     from '../lib/InitError';
+import { connect_db }    from '../lib/connect_db';
+import { get_myOrgID }   from '../lib/get_myOrgID';
+import { PrivateApp }    from '../lib/type/db_doc_privateApp';
+import { unknown2error } from '@leismore/unknown2error';
+import * as CONFIG       from '../config.json';
+const DB_NAME            = CONFIG.couchdb.dbPrefix + '_private_app';
 
 function init_handler1(req:Request, res:Response, next:NextFunction):void
 {
@@ -22,10 +23,10 @@ function init_handler1(req:Request, res:Response, next:NextFunction):void
   }
   catch(e)
   {
+    const f = unknown2error(e);
     let error = {message: 'CouchDB: connection failure', code: '1'};
     let response = {statusCode: '500'};
-    // @ts-ignore
-    next( new InitError(error, response, e) );
+    next( new InitError(error, response, f) );
     return;
   }
 
